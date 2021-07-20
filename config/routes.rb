@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   # [...]
   namespace :api, defaults: { format: :json } do
     namespace :v1 do 
-      resources :users , only: [:create, :show, :update, :destroy]
-      resources :booking
+      resources :users , only: [:index, :create, :show, :update, :destroy] do
+        resources :bookings, only: [ :index, :show, :create, :destroy ]
+      end
+      resources :bookings, only: [ :index, :show, :create, :destroy ]
       resources :rooms, only: [ :index, :show, :create, :update, :destroy ]
     end
   end
