@@ -59,14 +59,15 @@ more_rooms = [
     user:user
   }
 ]
-more_rooms.each do |room|
+# more_rooms.each do |room|
 
-  room["capacity"] = 5
-  rm = Room.create(room)
-  puts "#{Room.count} rooms created"
-end
-# rooms = Room.all
-# rooms.each do |room|
 #   room["capacity"] = 5
-#   room.save
+#   rm = Room.create(room)
+#   puts "#{Room.count} rooms created"
 # end
+rooms = Room.all
+rooms.each do |room|
+  room["date"] = "2021/10/09"
+  room["phone"] = "+83-444-4567-3645"
+  room.save
+end

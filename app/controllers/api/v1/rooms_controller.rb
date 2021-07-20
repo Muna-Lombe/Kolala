@@ -33,6 +33,6 @@ class Api::V1::RoomsController < Api::V1::BaseController
     @room = Room.find(params[:id])
   end
   def room_params
-    params.require(:room).permit(:id,:name,:address, :description, :room_photo_url, :price, :is_available,:user_id, :capacity, :date)
+    params.require(:room).permit(:id,:name,:address, :description, :room_photo_url, :price, :is_available,:user_id, :capacity, :date, :phone_number)
   end
 end
