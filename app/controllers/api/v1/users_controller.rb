@@ -23,6 +23,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def update
     @user.update(user_params)
+    raise
   end
 
   def destroy
