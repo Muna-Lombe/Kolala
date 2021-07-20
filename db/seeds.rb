@@ -68,6 +68,6 @@ more_rooms = [
 rooms = Room.all
 rooms.each do |room|
   room["date"] = "2021/10/09"
-  room["phone"] = "+83-444-4567-3645"
+  room["phone_number"] = "+83-444-4567-3645"
   room.save
 end
