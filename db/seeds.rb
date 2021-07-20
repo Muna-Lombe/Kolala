@@ -54,13 +54,14 @@ more_rooms = [
   }
 ]
 
-# more_rooms.each do |room|
-#   room["capacity"] = 5
-#   Room.create(room)
-#   puts "rooms created"
-# end
-rooms = Room.all
-rooms.each do |room|
+more_rooms.each do |room|
+  
   room["capacity"] = 5
-  room.save
+  Room.create(room)
+  puts "rooms created"
 end
+# rooms = Room.all
+# rooms.each do |room|
+#   room["capacity"] = 5
+#   room.save
+# end
