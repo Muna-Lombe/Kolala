@@ -14,7 +14,8 @@ class Api::V1::RoomsController < Api::V1::BaseController
     if @new_room.save
       # render json: { status: 'success'}
       render json: @new_room
-    else 
+    else
+      render json: { status: 'fail'}, status: 400
       # render error
     end
   end
