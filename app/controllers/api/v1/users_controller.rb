@@ -11,7 +11,10 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def profile
-    render json:  @user.bookings
+    render json: {
+      bookings: @user.bookings,
+      my_rooms: @user.rooms
+    }
   end
 
   def create
@@ -32,11 +35,6 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def destroy
     @user.destroy
-  end
-
-
-  def profile
-    
   end
 
   private
