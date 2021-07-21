@@ -1,5 +1,5 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :profile]
   # resources :users , only: [:index, :create, :show, :update, :destroy]
   def index
     @users = User.all
@@ -8,6 +8,10 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def show
     render json: @user
+  end
+
+  def profile
+    render json:  @user.bookings
   end
 
   def create
