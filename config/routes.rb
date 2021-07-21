@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'users/:id/profile', to:"users#profile", as: :user_profile
       resources :bookings, only: [:show, :create, :destroy ]
       resources :rooms, only: [ :index, :show, :create, :update, :destroy ]
-      post '/logins', to: 'logins#login' 
+      # post '/logins', to: 'logins#login' 
     end
   end
 end
