@@ -2,7 +2,9 @@ class Api::V1::BookingsController < Api::V1::BaseController
   before_action :set_booking, only: [:show, :update, :destroy]
 
   def show
-    render json: @booking
+    data = {booking: @booking, room:@booking.room, comment:@booking.comments}
+    render json: data
+    
   end
 
   def create
