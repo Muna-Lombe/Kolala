@@ -24,7 +24,7 @@ class Api::V1::RoomsController < Api::V1::BaseController
     @room.update(room_params)
   end
 
-  def destroy
+  def destroy 
     @room.destroy
   end
   
