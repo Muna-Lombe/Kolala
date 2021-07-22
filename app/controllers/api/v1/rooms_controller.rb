@@ -27,7 +27,7 @@ class Api::V1::RoomsController < Api::V1::BaseController
   def destroy 
     @room.destroy
   end
-  
+
   private
 
   def set_room
