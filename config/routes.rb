@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :show, :update, :destroy]
       get 'users/:id/profile', to:"users#profile", as: :user_profile
       resources :bookings, only: [:show, :create, :destroy ]
+      post 'bookings/:id', to:"bookings#create_comment", as: :create_comment
       resources :rooms, only: [ :index, :show, :create, :update, :destroy ]
       post '/login', to: 'login#login' 
     end
