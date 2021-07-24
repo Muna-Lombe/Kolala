@@ -21,6 +21,8 @@ more_rooms = [
   {
     name: "Vue bar - table",
     address: "Hyatt on the Bund, 30/F, 199 Huangpu Lu",
+    date: "july 28, 2021",
+    phone_number: "+83-444-4567-3645",
     description: "An elegant, comfortable and stylish bar located on the top two levels of Hyatt on the Bund, commanding the breathtaking views of both sides of the Huangpu River - the Bund on the Puxi side and the colourful skyline of the Lujiazui area on the Pudong side.",
     room_photo_url: "https://www.therooftopguide.com/rooftop-bars-in-shanghai/Bilder/VueBaratTheHyatt_1_slide.jpg",
     price:"200",
