@@ -11,8 +11,10 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def profile
+    @bookings = @user.bookings
+    @bookings= @bookings.map { |i| i.attributes.symbolize_keys.merge({ room: Room.find(i.room_id) }) }
     render json: {
-      bookings: @user.bookings,
+      bookings: @bookings,
       my_rooms: @user.rooms
     }
   end
