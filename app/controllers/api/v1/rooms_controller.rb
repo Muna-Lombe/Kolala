@@ -1,7 +1,11 @@
 class Api::V1::RoomsController < Api::V1::BaseController
   before_action :set_room, only: [:show, :update, :destroy]
   def index
-    @rooms = Room.all
+    if params[:query].present?
+      @rooms = Room.search_by_name_and_capacity(params[:query])
+    else
+      @rooms = Room.all
+    end
     # render json: @rooms #Just for testing
   end
 
@@ -32,6 +36,7 @@ class Api::V1::RoomsController < Api::V1::BaseController
 
   def set_room
     @room = Room.find(params[:id])
+
   end
   def room_params
     params.require(:room).permit(:id,:name,:address, :description, :room_photo_url, :price, :is_available,:user_id, :capacity, :date, :phone_number)

@@ -8,4 +8,11 @@ class Room < ApplicationRecord
   validates :capacity, presence: true , length: { minimum: 0 }
   validates :date, presence: true
   validates :phone_number, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_capacity,
+    against: [ :name, :capacity ],
+    using: {
+      tsearch: { any_word: true}
+    }
 end
