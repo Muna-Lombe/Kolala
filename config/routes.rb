@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :bookings, only: [:show, :create, :destroy ]
       post 'bookings/:id', to:"bookings#create_comment", as: :create_comment
       resources :rooms, only: [ :index, :show, :create, :update, :destroy ]
+      # get 'rooms?:query', to:"rooms#search", as: :rooms_search
       post '/login', to: 'login#login' 
     end
   end
